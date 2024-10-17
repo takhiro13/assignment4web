@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Largest and Smallest</title>
+</head>
+<body>
+<h3>Find the largest and smallest number</h3>
+<p>Number 1: <input type="number" id="num1"></p>
+<p>Number 2: <input type="number" id="num2"></p>
+<p>Number 3: <input type="number" id="num3"></p>
+<button onclick="findLargestSmallest()">Check</button>
+<p id="result"></p>
+
+<script>
+    function findLargestSmallest() {
+        let num1 = parseFloat(document.getElementById('num1').value);
+        let num2 = parseFloat(document.getElementById('num2').value);
+        let num3 = parseFloat(document.getElementById('num3').value);
+
+        let largest = Math.max(num1, num2, num3);
+        let smallest = Math.min(num1, num2, num3);
+
+        document.getElementById('result').textContent = `largest: ${largest}, smallest: ${smallest}`;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci Calculator</title>
+</head>
+<body>
+<h3>Calculate Fibonacci sequence</h3>
+<input type="number" id="num" />
+<button onclick="fibonacci()">Calculate</button>
+<p id="result"></p>
+
+<script>
+    function fibonacci() {
+        let n = parseInt(document.getElementById('num').value);
+        let fib = [0, 1];
+
+        for (let i = 2; i <= n; i++) {
+            fib[i] = fib[i - 1] + fib[i - 2];
+        }
+
+        document.getElementById('result').textContent = `Fibonacci sequence up to ${n} is: ${fib.join(', ')}`;
+    }
+</script>
+</body>
+</html>

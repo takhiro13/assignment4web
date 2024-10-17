@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Days Until New Year</title>
+</head>
+<body>
+<h3>Days Left Before New Year</h3>
+<button onclick="calculateDays()">Check</button>
+<p id="result"></p>
+
+<script>
+    function calculateDays() {
+        let today = new Date();
+        let currentYear = today.getFullYear();
+        let nextNewYear = new Date(currentYear + 1, 0, 1);
+
+        let timeDifference = nextNewYear - today;
+        let daysLeft = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+
+        document.getElementById('result').textContent = `There are ${daysLeft} days left until New Year.`;
+    }
+</script>
+</body>
+</html>

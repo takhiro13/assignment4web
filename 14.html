@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triangle Area</title>
+</head>
+<body>
+<h3>Calculate the area of a triangle</h3>
+<p>Side 1: <input type="number" id="side1"></p>
+<p>Side 2: <input type="number" id="side2"></p>
+<p>Side 3: <input type="number" id="side3"></p>
+<button onclick="calculateArea()">Calculate</button>
+<p id="result"></p>
+
+<script>
+    function calculateArea() {
+        let a = parseFloat(document.getElementById('side1').value);
+        let b = parseFloat(document.getElementById('side2').value);
+        let c = parseFloat(document.getElementById('side3').value);
+
+        let s = (a + b + c) / 2;
+        let area = Math.sqrt(s * (s - a) * (s - b) * (s - c));
+
+        document.getElementById('result').textContent = `The area is ${area.toFixed(2)}`;
+    }
+</script>
+</body>
+</html>
